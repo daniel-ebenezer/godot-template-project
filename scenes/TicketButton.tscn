@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bewbsra20wemq"]
+
+[ext_resource type="Texture2D" uid="uid://cy0ikn37p77bc" path="res://icon.svg" id="1_6s6fx"]
+
+[node name="TicketButton" type="TextureButton"]
+texture_normal = ExtResource("1_6s6fx")
+
+[node name="ValueLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 50

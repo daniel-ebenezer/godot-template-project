@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://c76pxlcs2ao63"]
+
+[ext_resource type="Script" uid="uid://bj0lh4a00u3hy" path="res://scripts/randomization.gd" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://c2llexdsdbegw" path="res://scripts/betting.gd" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://bonc7mw5lnks1" path="res://scripts/ui_manager.gd" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://ruql4u1govlb" path="res://scripts/audio_manager.gd" id="5_tbgi4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RNG" type="Node" parent="." groups=["RandomizationSystem"]]
+script = ExtResource("2_0wfyh")
+
+[node name="Betting" type="Node" parent="." groups=["BettingSystem"]]
+script = ExtResource("3_sugp2")
+
+[node name="UIManager" type="CanvasLayer" parent="." groups=["UISystem"]]
+script = ExtResource("4_jyhfs")
+
+[node name="MainMenuPanel" type="Panel" parent="UIManager"]
+offset_right = 1151.0
+offset_bottom = 649.0
+
+[node name="PlayButton" type="Button" parent="UIManager/MainMenuPanel"]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 365.0
+offset_right = 736.0
+offset_bottom = 444.0
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="BetPanel" type="Panel" parent="UIManager"]
+visible = false
+offset_right = 1150.0
+offset_bottom = 651.0
+
+[node name="BalanceLabel" type="Label" parent="UIManager/BetPanel"]
+layout_mode = 0
+offset_left = 814.0
+offset_top = 60.0
+offset_right = 1073.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 50
+text = "Balance : 0"
+
+[node name="ErrorLabel" type="Label" parent="UIManager/BetPanel"]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 231.0
+offset_right = 712.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 50
+
+[node name="BetButton" type="Button" parent="UIManager/BetPanel"]
+layout_mode = 0
+offset_left = 844.0
+offset_top = 390.0
+offset_right = 1107.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 50
+text = "Bet"
+
+[node name="AudioManager" type="Node" parent="." groups=["AudioSystem"]]
+script = ExtResource("5_tbgi4")
+
+[connection signal="pressed" from="UIManager/MainMenuPanel/PlayButton" to="UIManager" method="_on_play_button_clicked"]
+[connection signal="pressed" from="UIManager/BetPanel/BetButton" to="UIManager" method="_on_bet_button_pressed"]

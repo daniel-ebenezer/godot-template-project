@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="DML iGaming Template"
+run/main_scene="uid://c76pxlcs2ao63"
+config/features=PackedStringArray("4.4", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/game_manager.gd"
+SignalBus="*res://scripts/signal_bus.gd"
+
+[global_group]
+
+RandomizationSystem=""
+AudioSystem=""
+UISystem=""
+BettingSystem=""
+
+[rendering]
+
+renderer/rendering_method="mobile"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="GameConfig" load_steps=2 format=3 uid="uid://bsp3hflad60fi"]
+
+[ext_resource type="Script" uid="uid://cevtwo7ma3c6n" path="res://scripts/game_config.gd" id="1_86f85"]
+
+[resource]
+script = ExtResource("1_86f85")
+initial_balance = 500.0
+ticket_values = Array[float]([10.0, 20.0, 30.0])
+max_bet = 50.0
+min_bet = 1.0
+default_bet = 10.0
+seed = 0
+outcomes = {
+"sample_outcome": {
+"multiplier": 2.0
+}
+}
+metadata/_custom_type_script = "uid://cevtwo7ma3c6n"
